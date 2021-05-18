@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-const SaucesRoutes = require('./routes/sauces')
+const SaucesRoutes = require('./routes/sauces');
 const userRoutes = require('./routes/user');
 const path = require('path');
 
