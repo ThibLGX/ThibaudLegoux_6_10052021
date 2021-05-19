@@ -1,3 +1,6 @@
+const express = require('express');
+const app = express();
+
 const bcrypt = require('bcrypt');
 
 const User = require('../models/User');
@@ -34,7 +37,7 @@ exports.login = (req, res, next) => {
                         token: jwt.sign(
                             { userId: user._id },
                             'RANDOM_TOKEN_SECRET',
-                            { expiresIn: '24h' }
+                            { expiresIn: '999h' }
                         )
                     });
                 })
