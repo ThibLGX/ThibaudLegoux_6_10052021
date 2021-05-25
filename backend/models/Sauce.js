@@ -1,5 +1,7 @@
+//importation du pack mongoose pour le compte mongoBD
 const mongoose = require('mongoose');
 
+//schéma de la description des sauces
 const sauceSchema = mongoose.Schema({
     userId: { type: String, required: true },
     name: { type: String, required: true },

@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   errorMsg: string;
 
   constructor(private formBuilder: FormBuilder,
-              private auth: AuthService,
-              private router: Router) { }
+    private auth: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     ).catch(
       (error) => {
         this.loading = false;
-        this.errorMsg = error.message;
+        this.errorMsg = (error.error.message) ? error.error.message : error;
       }
     );
   }
