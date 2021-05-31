@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 //importation du pack mongoose pour intéragir avec mongoDB
 const mongoose = require('mongoose');
 
-// pack path pour importer les images avec multer
+// pack path pour importer les images en donnant l'accès aux fichiers
 const path = require('path');
 
 //récupération des routes des sauces
@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json()); //Transformer le corps de la requête en objet javascript utilisable
 
-app.use('/images', express.static(path.join(__dirname, 'images'))); // gestion des images en statique
+app.use('/images', express.static(path.join(__dirname, 'images'))); // middlewre pour servir le dossier statique 'images'
 
 app.use(helmet()); // Exécution du plugin de sécurité
 
